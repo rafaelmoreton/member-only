@@ -12,7 +12,8 @@
 
   <body>
     <% if logged_in? %>
-      <%= "You are logged in as #{current_user.name}" %>
+      <%= "You are logged in as #{current_user.name}" %> <br>
+      <%= link_to "Log out", logout_path, data: { turbo_method: "delete" } %>
     <% end %>
     <% flash.each do |message_type, message| %>
       <div class="alert alert-<%= message_type %>"><%= message %></div>
