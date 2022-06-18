@@ -11,6 +11,9 @@
   </head>
 
   <body>
+    <% if logged_in? %>
+      <%= "You are logged in as #{current_user.name}" %>
+    <% end %>
     <% flash.each do |message_type, message| %>
       <div class="alert alert-<%= message_type %>"><%= message %></div>
     <% end %>
